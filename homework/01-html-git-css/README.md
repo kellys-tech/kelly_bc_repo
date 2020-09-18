@@ -16,6 +16,14 @@
 ## The challenges I met were:
 1. In the HTML, fixing the links in the header to navigate to a related section on the page when clicked
 2. In the HTML, adding the semantic elements
-3. In the CSS, combining styles and elements appropriately to reduce cluttering the css with duplicate code
+3. In the CSS, combining styles and elements appropria tely to reduce cluttering the css with duplicate code
 
-The website is being hosted on github pages.
+## The website is being hosted on github pages.
+
+## Website Images:
+
+file:///Users/kellysmith/Documents/bootcamp/github/kelly_bc_repo/homework/01-html-git-css/Develop/index.html
+
+![Horiseon 1](Website1.png)
+![Horiseon 2](Website2.png)
+![Horiseon 3](Website2.png)
