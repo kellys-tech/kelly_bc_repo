@@ -22,8 +22,6 @@
 
 ## Website Images:
 
-file:///Users/kellysmith/Documents/bootcamp/github/kelly_bc_repo/homework/01-html-git-css/Develop/index.html
-
-![Horiseon 1](Website1.png)
-![Horiseon 2](Website2.png)
-![Horiseon 3](Website2.png)
+![Horiseon 1](assets/Website1.png)
+![Horiseon 2](assets/Website2.png)
+![Horiseon 3](assets/Website2.png)
