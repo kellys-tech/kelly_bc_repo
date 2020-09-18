@@ -3,8 +3,8 @@
 *This is a homepage for Horiseon Social Solution Services. This website is being created so any potential clients navigating to this site will see a snapshot on their homepage of the services the company can offer.*
 
 ## Webpage created using:
-HTML - to create the content of the homepage. 
-CSS -  to style the content.
+* HTML - to create the content of the homepage. 
+* CSS -  to style the content.
 
 ## Features
 * a header with a title and links to other parts of the page
