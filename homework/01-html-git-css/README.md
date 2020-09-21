@@ -24,4 +24,4 @@
 
 ![Horiseon 1](assets/Website1.png)
 ![Horiseon 2](assets/Website2.png)
-![Horiseon 3](assets/Websites.png)
+![Horiseon 3](assets/Website3.png)

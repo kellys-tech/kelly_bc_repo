@@ -1,0 +1,17 @@
+/**
+ * Pseudo classes*/
+
+a:hover {
+    background-color: red;
+}
+
+a:default {
+    background-color: blue;
+}
+
+a:active {
+    background-color: green;
+}
+a:focus {
+    background-color: purple;
+}
