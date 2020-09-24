@@ -1,8 +1,17 @@
+
+body {
+    background-image: url("../Images/backgroundimage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .container{
     background-color: green;
     padding-bottom: 1em;
     margin-top: 2em;
 }
+
+
 
 .footer {
     position: fixed;
