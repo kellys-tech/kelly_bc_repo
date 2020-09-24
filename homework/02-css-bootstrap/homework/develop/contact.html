@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-
+<!--Navbar and link to CSS, portfolio and index pages-->
     <head>
         <meta charset="utf-8">
-        <title>Kelly</title>
+        <title>Kelly Smith contact page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Assets/css/style.css">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <link href="portfolio.html">
         <link href="index.html">
     </head>
 
+<!--Navbar links-->
     <body>
             <a class="navbar-brand" href="#">Kelly Smith</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,30 +30,46 @@
                     </li>
                 </ul>
               </div>
-        </nav> 
-          
+        </nav>
+
+<!--container for contact form--> 
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-lg-12">
+            <h1>Contact Me</h1>
+        </div>
+      </div>
        <form>
-					<div class="form-group">
-					<h2>Contact Me</h2>
+					<div class="form-row">
+            <div class="col">
 							<label for="Name">Name</label>
-							<input type="text" class="form-control" id="Name" placeholder="Enter your name">
-					</div>
-					<div class="form-group">
+              <input type="text" class="form-control" id="Name" placeholder="Enter your name">
+            </div>
+          </div>
+					<div class="form-row">
+            <div clas="col">
 							<label for="Email">Email</label>
-							<input type="email" class="form-control" id="Email" placeholder="Enter your email">
-					</div>
-					<div class="form-group">	
+              <input type="email" class="form-control" id="Email" placeholder="Enter your email">
+            </div>
+          </div>
+					<div class="form-row">
+            <div class="col">	
 							<label for="Message">Message</label>
-							<input type="textarea" class="form-control" id="Message" placeholder="Send me a message">
-					</div>
+							<textarea class="form-control" id="Message" rows="3"></textarea>
+            </div>
+          </div>
 					<button type="Submit" class="btn btn-primary">Submit</button>
 			 </form>
-					
+      </div>	
+    </div>	
         
-
+  <!--footer-->
+    <footer class="footer">
+      <p>Footer</p>
+    </footer>
       
           
-
+  <!--javascript for navbar-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
