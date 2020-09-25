@@ -3,6 +3,7 @@
 <!--Navbar and link to CSS, portfolio and index pages-->
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kelly Smith contact page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="./Assets/css/style.css">
@@ -33,37 +34,39 @@
               </div>
         </nav>
 
-<!--container for contact form--> 
+<!--container for contact form-->
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-lg-12">
+          <div class="col-xs-12">
             <h1>Contact Me</h1>
         </div>
       </div>
-       <form>
-					<div class="form-row">
-            <div class="col">
+      <section>
+      <form>
+					<div class="form-group">
+            <div class="col-xs-12">
 							<label for="Name">Name</label>
               <input type="text" class="form-control" id="Name" placeholder="Enter your name">
             </div>
           </div>
-					<div class="form-row">
-            <div clas="col">
+					<div class="form-group">
+            <div clas="col-xs-12">
 							<label for="Email">Email</label>
               <input type="email" class="form-control" id="Email" placeholder="Enter your email">
             </div>
           </div>
-					<div class="form-row">
-            <div class="col">	
+          <div class="form-group">
+            <div class=" col-xs-12">	
 							<label for="Message">Message</label>
-							<textarea class="form-control" id="Message" rows="3"></textarea>
+							<textarea class="form-control" id="Message" rows="3" placeholder="Hello. Send me a message"></textarea>
             </div>
           </div>
 					<button type="Submit" class="btn btn-primary">Submit</button>
-			 </form>
+       </form>
+      </section>  
       </div>	
-    </div>	
-        
+    </div>
+
   <!--footer-->
     <footer class="footer">
       <p>Footer</p>
