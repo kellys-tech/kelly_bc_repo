@@ -1,5 +1,6 @@
 
 body {
+
     background-image: url("../Images/backgroundimage.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -10,10 +11,33 @@ body {
     background-color: rgb(223, 111, 70);
 }
 
+.navbar-custom {
+    background-color:rgb(95, 91, 85);
+}
+
+.navbar-custom a {
+    color: lightgrey;
+    border-style: solid:
+    border-color: black;
+    border-width: 2px;
+}
+
 .container {
-    background-color: rgb(223, 111, 70);
+    background-color: darkgray;
     padding-bottom: 1em;
     margin-top: 2em;
+    border-radius: 2ex;
+}
+
+h3 {
+    padding-left: 10px;
+    text-align: center;
+}
+
+.btn {
+    background-color: coral;
+    color: black;
+    border-color: black;
 }
 
 .footer {
@@ -21,7 +45,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
+    background-color: rgb(95, 91, 85);
+    color: lightgrey;
     text-align: center;
-  }
+  ] 
