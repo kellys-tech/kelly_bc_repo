@@ -3,10 +3,11 @@
 <!--Navbar and link to CSS, portfolio and contact pages-->
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kelly Smith profile</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="./Assets/css/style.css">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-custom navbar-expand-lg">
         <link href="portfolio.html">
         <link href="contact.html">
     </head>
@@ -17,19 +18,12 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="index.html">About Me</a>
-                  </li>
-                  <li class="nav-item">
-										<a class="nav-link" href="contact.html">Contact</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="portfolio.html">Portfolio</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link active" href="index.html">About Me <span class="sr-only">(current)</span></a>
+                  <a class="nav-item nav-link" href="contact.html">Contact</a>
+                  <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
+                </div>
               </div>
         </nav>
         
@@ -40,7 +34,7 @@
             <h3>About Me</h3>
           </div>
         </div>
-
+      <section>
         <div class="row">
           <div class="col-lg-12 col-xs-12">
             <img src="http://placehold.it/150x150" alt="Placeholder" class="img-thumbnail img-responsisve float-left mr-2">
@@ -49,6 +43,7 @@
             </p>
           </div>
         </div>
+      </section>
       </div>
       
   <!--footer-->
