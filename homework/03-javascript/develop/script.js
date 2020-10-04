@@ -54,7 +54,7 @@ function generatePassword (){
     console.log (confirmNum)
     
       if (confirmNum){
-      passArray = passArray.concat(lowercase);
+      passArray = passArray.concat(numbers);
       console.log(passArray)
     }
     
@@ -64,13 +64,12 @@ function generatePassword (){
       return;
     }
 
-    var newPass = [];
-    for (i = 0; i < passArray; i++) {
-      newPass.push(passArray[Math.floor(Math.random() * numChar.length)]);
-      console.log (newPass)
-      return newPass.join("");
+    var password = [];
+    for (i = 0; i < numChar; i++) {
+      password.push(passArray[Math.floor(Math.random() * passArray.length)]);
+      console.log (password)
     }
-    
+    return password.join("");
   }
 
    // Write password to the #password input
@@ -81,9 +80,3 @@ function generatePassword (){
   }
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
-
- // var newPass = [];
- // for (i = 0; i < passArray; i++) {
-  //  newPass.push(passArray(Math.floor(Math.random * numChar)))
-  //}
- // return newPass.join("");
