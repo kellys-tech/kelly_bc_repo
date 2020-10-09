@@ -56,14 +56,18 @@ document.getElementById("start").addEventListener("click", startQuiz)
 //display first question card 
 function startQuiz () {
     document.getElementById("questCard").style.display = "block";
-    document.getElementById("homepage").style.display = "none";
+    document.getElementById("homepage").style.display = "";
+    document.getElementById("quest").innerHTML = "";
+    document.getElementById("userinput1").innerHTML = "";
+    document.getElementById("userinput2").innerHTML = "";
+    document.getElementById("userinput3").innerHTML = "";
+    document.getElementById("userinput4").innerHTML = "";
+    document.getElementById("ans").innerHTML = "";
 
 }
    
     
 //function renderCard(){
-    //quest.innerHTML = "";
-
     //check the index length
 //})
 
