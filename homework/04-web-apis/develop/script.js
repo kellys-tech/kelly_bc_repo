@@ -1,75 +1,115 @@
 
-//set variables for quiz buttons
-var start = document.querySelector("#button");
+//set variables for start quiz button
+// var start = document.querySelector("#button");
 
-var quizQuest = document.getElementById(".quest");
-var quizInp1 = document.getElementById(".userinput1");
-var quizImp2 = document.getElementById(".userinput2");
-var quizInp3 = document.getElementById(".userinput3");
-var quizInp4 = document.getElementById(".userinput4");
-var quizAns = document.getElementById(".ans");
+var position = 0;
+var correct = 0;
+var test = ""
+var test_status = ""
+var option = ""; 
+var options = "";
+var selA = "";
+var selB = "";
+var selC = "";
+var selD = "";
 
+var ansOptions = document.getElementById("userinput1")
+var ansOptions = document.getElementById("userinput2")
+var ansOptions = document.getElementById("userinput3")
+var ansOptions = document.getElementById("userinput4")
 
-
-var score= 0;
 
 //set variables for questions, options and answers
 var questions = [
 {
-    question: "Commonly used data types DO NOT include ____.", 
-    options: ["strings", "alerts", "booleans", "numbers"],
-    answer: "alerts"
+        question:"Commonly used data types DO NOT include ____.", 
+        a:"strings", b:"alerts", c:"booleans", d:"numbers", 
+        answer:"alerts",
+},
+{  
+        question:"The condition in an if/else statement is enclosed within ____.",
+        a:"quotes", b:"curly brackets",  c:"parentheses", d:"square brackets",
+        answer:"parentheses",
 },
 {
-    question: "The condition in an if/else statement is enclosed within ____.",
-    options: ["quotes","curly brackets","parentheses", "square brackets"],
-    answer: "parentheses"
-},       
-{
-    question: "Arrays in JavaScript can be used to store ____.", 
-    options: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    answer: "all of the above"
+        question:"Arrays in JavaScript can be used to store ____.",
+        a:"numbers and strings", b:"other arrays", c:"booleans", d:"all of the above",
+        answer:"all of the above",
 },
 {
-    question: "String values must be enclosed within ____ when being assigned to variables.", 
-    options: ["parentheses", "commas", "curly brackets", "quotes"],
-    answer: "quotes"
+        question:"String values must be enclosed within ____ when being assigned to variables.",
+        a:"parentheses", b:"commas", c:"curly brackets", d:"quotes", 
+        answer:"quotes",
 },
 {
-    question:  "A very useful tool used during development and debugging for printing content to the debugger is:",
-    options: ["JavaScript", "terminal/bash", "for loops","console log"],
-    answer: "console log"
-}]
-//console.log questions, options and answer to verify code is working to this point
-    console.log(questions[0])
-    console.log(questions[1])
-    console.log(questions[2])
-    console.log(questions[3])
-    console.log(questions[4])
+        question:"A very useful tool used during development and debugging for printing content to the debugger is:", 
+        a:"JavaScript", b:"terminal/bash", c:"for loops", d:"console log", 
+        answer:"console log"
+    }]
 
-//hide question and answer card
-document.getElementById("questCard").style.display = "none";
+//console log questions, options and answer to verify code is working to this point
+    console.log(questions)
 
-//create function to click Start Quiz button
-document.getElementById("start").addEventListener("click", startQuiz)
-
-//display first question card 
-function startQuiz () {
-    document.getElementById("questCard").style.display = "block";
-    document.getElementById("homepage").style.display = "";
-    document.getElementById("quest").innerHTML = "";
-    document.getElementById("userinput1").innerHTML = "";
-    document.getElementById("userinput2").innerHTML = "";
-    document.getElementById("userinput3").innerHTML = "";
-    document.getElementById("userinput4").innerHTML = "";
-    document.getElementById("ans").innerHTML = "";
-
+//simplify getElementById    
+    function get(x) {
+    return document.getElementById(x)
 }
-   
+    console.log("GET function works")
     
-//function renderCard(){
-    //check the index length
-//})
+ //render a question to display in the quiz
+    function renderQuestion() {
+    // document.getElementById("start").addEventListener("click", startQuiz)   
+        test = get("button");
+        if (position >= window.question) {
+        test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+        get("submission").innerHTML = "Test completed";
+    //resets variable for quiz restart
+        position = 0;
+        correct = 0;
+    //stops renderQuestion function when test is complete
+        return false;
+}
+    get("quest").innerHTML = "Question "+(position+1)+" of "+questions.length;
+  
+    question = questions[position].question;
+    chA = questions[position].a;
+    chB = questions[position].b;
+    chC = questions[position].c;
+    chD = questions[position].d;
+    console.log("these are the questions")
+// display the question
+    question.innerHTML = "<h3>"+question+"</h3>";
+    console.log ("this is the question")
+// display the answer options
+// the += appends to the data we started on the line above
+    document.getElementById("userinput1").value="chA";
+    document.getElementById("userinput2").value="chB";
+    document.getElementById("userinput3").value="chC";
+    document.getElementById("userinput4").value="chD";
+  
+}
+    console.log("these are the options")
+    function checkAnswer(){
+    // use getElementsByName because we have an array which it will loop through
+    choices = document.getElementsByName("choices");
+    for(var i=0; i<choices.length; i++){
+      if(choices[i].checked){
+        choice = choices[i].value;
+      }
+    }
+    // checks if answer matches the correct choice
+    if(choice == questions[position].answer){
+      //each time there is a correct answer this value increases
+      correct++;
+    }
+    // changes position of which character user is on
+    position++;
+    // then the renderQuestion function runs again to go to next question
+    renderQuestion();
+  }
+//add eventListener to call render Questino on page load event
+  window.addEventListener("load", renderQuestion);
+
 
 
 //var time;
@@ -94,24 +134,22 @@ function startQuiz () {
 //         score:1
 //     }
 // ]
+
 // //display the results run a for loop based on userScore.length
 // userScore[1].name
 // userScore[1].score
 
 
-//start.addEventListener("click", function () {
-
-//},
 
     //else function endGame()
-    
+
    //index=0;
    //restart time;
 
 
 
 
-    
+
 
     //onclick for the btn=> grab userinput
     //checkResults(userinput, game.answer[index]);
@@ -124,8 +162,6 @@ function startQuiz () {
     //if they are the same keep on going
     //else wrong tell them.. and decrement time
 //}
-
-//function endGame(){}
 
 
 //BEGIN EXTRAS HERE
