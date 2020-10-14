@@ -29,6 +29,14 @@ var questions = [
 
 //console log questions, options and answer to verify code is working to this point
     console.log(questions)
+//trigger onlcick
+    document.querySelector("#start").onclick = function(){
+        //verify click works
+        // alert("click");
+        //do your needed show cards
+        showQuestion();
+
+    };
     
 //set variables and for quiz questions and options
 var start = document.querySelector("#button");
@@ -38,28 +46,91 @@ var optionsText = document.querySelector(".optionsCard")
 
 //function to get and display questions and answer options
 function showQuestion() {
+document.querySelector("#homepage").style.display = "none";
     console.log(questions[currentQuest]);
     var thisQuest = (questions[currentQuest]);
-    questionText.textContent = thisQuest.question;
+    document.querySelector("#questCard").textContent = thisQuest.question;
 
-optionsText.textContent = "";
+    document.querySelector("#optionsCard").textContent = "";
 thisQuest.options.forEach(function(answer) {
     var newBtn = document.createElement("button");
     newBtn.textContent = answer;
     newBtn.addEventListener("click", selectAnswer);
-    optionsText.appendChild(newBtn);
+    document.querySelector("#optionsCard").appendChild(newBtn);
     });
 }
 
 function selectAnswer(k) {
+    console.log("selectAnswers")
     console.log(k.target.textContent);
+    //evaluate the userinput when they are wrong 
+
+    //or if they are at the end
     nextQuestion();
 }
 
 function nextQuestion() {
+    console.log("updating the index")
     currentQuest++;
-    displayQuestion();
+    checkround();
 }
+
+var index=0;
+
+function startGame(){
+    console.log("starting");
+    //hide btn
+//call to display
+    displayCard();
+}
+
+function displayCard(){
+    console.log("displaycard");
+        //display q
+        //display ans
+        //displaychoices
+        //onclick for the btns
+            //when user click on btn..
+                checkAns("helloworld");
+}
+
+function checkAns(userinput){
+    console.log("checking ans")
+    console.log("userinput: "+userinput)
+}
+
+function addUser(){}
+function displayScores(){}
+
+function startTime(){}
+
+function countTime(){}
+function stopTime(){}
+
+startGame();
+
+//function restart(){}
+
+
+//check if you should end or go to the next card
+function checkround() {
+    console.log("next card");
+    console.log("Index:"+ currentQuest);
+    //check if you can go to the next card
+    showQuestion();
+    //check if you are done (index location vs the length of the array)
+        //endgame();
+
+}
+
+function endgame(){
+    alert("GAME OVER");
+    //do ls stuff
+
+    //show (input user data) and hide stuff (questionarea)
+   // onclickfx when the hit submit add data to ls and show them the results page
+}
+
 
 
 // when user clicks on answer button
