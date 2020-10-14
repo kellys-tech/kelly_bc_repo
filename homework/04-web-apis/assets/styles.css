@@ -22,8 +22,9 @@ button {
     text-align: center;
     
 }
-/* section.card {
-    display: none; */
+section.card {
+    display: none;
+}
 
 section.submission {
     display: none;
@@ -32,6 +33,5 @@ section.submission {
 section.scores {
     display: none;
 }
-
 
 
