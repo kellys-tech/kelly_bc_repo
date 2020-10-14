@@ -1,9 +1,5 @@
 
-//set variables for start quiz button
-var start = document.querySelector("#button");
-
-
-//set variables for questions, options and answers
+//set variables for questions, options and answer
 var questions = [
     {
         question: "Commonly used data types DO NOT include ____.",
@@ -17,7 +13,7 @@ var questions = [
     },
     {
         question: "Arrays in JavaScript can be used to store ____.",
-        options ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        options: ["numbers and strings", "other arrays", "booleans", "all of the above"],
         answer: "all of the above",
     },
     {
@@ -33,6 +29,38 @@ var questions = [
 
 //console log questions, options and answer to verify code is working to this point
     console.log(questions)
+    
+//set variables and for quiz questions and options
+var start = document.querySelector("#button");
+var currentQuest = 0;
+var questionText = document.querySelector(".questCard");
+var optionsText = document.querySelector(".optionsCard")
+
+//function to get and display questions and answer options
+function showQuestion() {
+    console.log(questions[currentQuest]);
+    var thisQuest = (questions[currentQuest]);
+    questionText.textContent = thisQuest.question;
+
+optionsText.textContent = "";
+thisQuest.options.forEach(function(answer) {
+    var newBtn = document.createElement("button");
+    newBtn.textContent = answer;
+    newBtn.addEventListener("click", selectAnswer);
+    optionsText.appendChild(newBtn);
+    });
+}
+
+function selectAnswer(k) {
+    console.log(k.target.textContent);
+    nextQuestion();
+}
+
+function nextQuestion() {
+    currentQuest++;
+    displayQuestion();
+}
+
 
 // when user clicks on answer button
     //if {
