@@ -52,6 +52,7 @@ function showQuestion() {
     document.querySelector("#optionsCard").appendChild(newBtn);
     });
 }
+
 //function for action after selecting an answer
 function selectAnswer(k) {
     console.log("selectAnswers")
@@ -61,10 +62,10 @@ function selectAnswer(k) {
         console.log ("next question please");
         nextQuestion();
     }
-    //if at last question display end game
+    //if at last question display end quiz
     else {
-        endgame()
-        displayScores();
+        endQuiz()
+        displayScore();
     }
         //if time is up
             //if not go to next question
@@ -78,42 +79,64 @@ function nextQuestion() {
     checkround();
 }
 
-//check if you should end or go to the next card
+//check if you should end game or go to the next question card
 function checkround() {
     console.log("next card");
     console.log("Index:"+ currentQuest);
     //check if you can go to the next card
     showQuestion();
     //check if you are done (index location vs the length of the array)
-        //endgame();
+        //endQuiz();
 }
+//function to display end quiz screen
+function endQuiz(){
+    console.log("GAME OVER");
+    document.querySelector("#questCard").style.display = "none";
+    document.querySelector("#optionsCard").style.display = "none";
+     //do localstorage stuff
+ 
+     //show (input user data) and hide stuff (questionarea)
+    // onclickfx when they hit submit add data to ls and show them the results page
+ }
 
-function displayScores(){
+function displayScore(){
     document.querySelector("#submitForm").style.display = "block";
     console.log("submit quiz")
+    addUser()
 }
-function addUser(){}
 
+function addUser() {
+    console.log("my initials")
+    document.querySelector("#initialField");
+    var userName = document.querySelector("#initialField");
+    localStorage.setItem("initialField", userName);
+    
+    //add onclick event of user initials and score
+    document.querySelector("#submitQuiz").onclick = function(){
+        showHighscores();
+};
+}
 
+// get and show user's scores
+function showHighscores() {
+    document.querySelector("#submitForm").style.display = "none";
+    document.querySelector("#scoreList").style.display = "block";
+    //grab data from local storage to show
+}
+
+//start timer
 function startTime(){}
 
+//decrement time
 function countTime(){}
+
+//stop timer
 function stopTime(){}
 
-//startGame();
-
+//optional restart quiz function
 //function restart(){}
+  
 
-function endgame(){
-   console.log("GAME OVER");
-   document.querySelector("#questCard").style.display = "none";
-   document.querySelector("#optionsCard").style.display = "none";
-    //do localstorage stuff
-
-    //show (input user data) and hide stuff (questionarea)
-   // onclickfx when the hit submit add data to ls and show them the results page
-}
-    
 //ACCEPTANCE CRITERIA
 //GIVEN I am taking a code quiz
 //WHEN I click the start button (in HTML file)
