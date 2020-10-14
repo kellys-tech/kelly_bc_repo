@@ -26,91 +26,57 @@ var questions = [
         options: ["JavaScript", "terminal/bash", "for loops", "console log"],
         answer: "console log"
     }]
-
-//console log questions, options and answer to verify code is working to this point
     console.log(questions)
-//trigger onlcick
-    document.querySelector("#start").onclick = function(){
-        //verify click works
-        // alert("click");
-        //do your needed show cards
-        showQuestion();
 
-    };
+    //trigger onclick to start quiz
+    document.querySelector("#start").onclick = function(){
+        showQuestion();
+};
     
-//set variables and for quiz questions and options
+//set variables button and set current question index to 0 to start quiz
 var start = document.querySelector("#button");
 var currentQuest = 0;
-var questionText = document.querySelector(".questCard");
-var optionsText = document.querySelector(".optionsCard")
 
 //function to get and display questions and answer options
 function showQuestion() {
-document.querySelector("#homepage").style.display = "none";
+    document.querySelector("#homepage").style.display = "none";
     console.log(questions[currentQuest]);
     var thisQuest = (questions[currentQuest]);
     document.querySelector("#questCard").textContent = thisQuest.question;
 
     document.querySelector("#optionsCard").textContent = "";
-thisQuest.options.forEach(function(answer) {
+    thisQuest.options.forEach(function(answer) {
     var newBtn = document.createElement("button");
     newBtn.textContent = answer;
     newBtn.addEventListener("click", selectAnswer);
     document.querySelector("#optionsCard").appendChild(newBtn);
     });
 }
-
+//function for action after selecting an answer
 function selectAnswer(k) {
     console.log("selectAnswers")
-    console.log(k.target.textContent);
-    //evaluate the userinput when they are wrong 
-
-    //or if they are at the end
-    nextQuestion();
+    //evaluate 
+    //if they are not at the end of the questions then display next question
+    if (currentQuest < 4) {
+        console.log ("next question please");
+        nextQuestion();
+    }
+    //if at last question display end game
+    else {
+        endgame()
+        displayScores();
+    }
+        //if time is up
+            //if not go to next question
+           //else endGame
 }
 
+//function to display next question
 function nextQuestion() {
     console.log("updating the index")
     currentQuest++;
     checkround();
 }
-
-var index=0;
-
-function startGame(){
-    console.log("starting");
-    //hide btn
-//call to display
-    displayCard();
-}
-
-function displayCard(){
-    console.log("displaycard");
-        //display q
-        //display ans
-        //displaychoices
-        //onclick for the btns
-            //when user click on btn..
-                checkAns("helloworld");
-}
-
-function checkAns(userinput){
-    console.log("checking ans")
-    console.log("userinput: "+userinput)
-}
-
-function addUser(){}
-function displayScores(){}
-
-function startTime(){}
-
-function countTime(){}
-function stopTime(){}
-
-startGame();
-
-//function restart(){}
-
 
 //check if you should end or go to the next card
 function checkround() {
@@ -120,28 +86,33 @@ function checkround() {
     showQuestion();
     //check if you are done (index location vs the length of the array)
         //endgame();
-
 }
 
+function displayScores(){
+    document.querySelector("#submitForm").style.display = "block";
+    console.log("submit quiz")
+}
+function addUser(){}
+
+
+function startTime(){}
+
+function countTime(){}
+function stopTime(){}
+
+//startGame();
+
+//function restart(){}
+
 function endgame(){
-    alert("GAME OVER");
-    //do ls stuff
+   console.log("GAME OVER");
+   document.querySelector("#questCard").style.display = "none";
+   document.querySelector("#optionsCard").style.display = "none";
+    //do localstorage stuff
 
     //show (input user data) and hide stuff (questionarea)
    // onclickfx when the hit submit add data to ls and show them the results page
 }
-
-
-
-// when user clicks on answer button
-    //if {
-    //it is not the last question, then present next question
-    // }
-    // else {
-        //present end game screen (user sees their score and enters initials to save score)
-    // }
-
-
     
 //ACCEPTANCE CRITERIA
 //GIVEN I am taking a code quiz
