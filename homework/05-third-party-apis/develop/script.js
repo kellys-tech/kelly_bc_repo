@@ -47,14 +47,14 @@ $(document).ready(function() {
 });
 
 //display calendar events when page refreshes if the same day
-function renderEvent() {
-    var schedule = localStorage.getItem("textarea".val);
-if (nowDate !== date) {
-    localStorage.removeItem("textarea".val)
-}
+// function renderEvent() {
+//     var schedule = localStorage.getItem("textarea".val);
+// if (nowDate !== date) {
+//     localStorage.removeItem("textarea".val)
+// }
 
-}
-renderEvent();
+//}
+// renderEvent();
 
 //get event from local storage
 $("#hour9.description").val(localStorage.getItem("hour9"));
