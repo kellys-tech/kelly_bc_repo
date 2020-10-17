@@ -1,4 +1,5 @@
 
+
 // display current date in header
 var nowDate = moment().format('dddd,' + ' MMM Do YYYY');
 var date = $('#currentDay');
@@ -45,7 +46,15 @@ $(document).ready(function() {
 });
 });
 
-var interval = setInterval(hourChecker, 900000)
+//display calendar events when page refreshes if the same day
+function renderEvent() {
+    var schedule = localStorage.getItem("textarea".val);
+if (nowDate !== date) {
+    localStorage.removeItem("textarea".val)
+}
+
+}
+renderEvent();
 
 //get event from local storage
 $("#hour9.description").val(localStorage.getItem("hour9"));
@@ -57,6 +66,10 @@ $("#hour14.description").val(localStorage.getItem("hour14"));
 $("#hour15.description").val(localStorage.getItem("hour15"));
 $("#hour16.description").val(localStorage.getItem("hour16"));
 $("#hour17.description").val(localStorage.getItem("hour17"));
+
+//set interval to check time every 15 mins
+var interval = setInterval(hourChecker, 900000)
+
 
 
 // GIVEN I am using a daily planner to create a schedule
@@ -71,5 +84,4 @@ $("#hour17.description").val(localStorage.getItem("hour17"));
 // WHEN I click the save button for that time block
 // THEN the text for that event is saved in local storage(done)
 // WHEN I refresh the page
-// THEN the saved events persist
-
+// THEN the saved events persist - in progress
